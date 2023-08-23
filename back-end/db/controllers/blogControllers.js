@@ -53,11 +53,23 @@ async function deleteBlog(req, res) {
     res.status(500).json({ error: 'Internal server error' });
   }
 }
+async function getBlogsByUser(req, res) {
+  const userId = req.params.userId;
+  try {
+    const blogs = await Blog.find({ creator: userId });
+    res.status(200).json(blogs);
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while fetching blogs.' });
+  }
+}
+
 
 module.exports = {
   createBlog,
   getBlogs,
   getBlogById,
   updateBlog,
-  deleteBlog
+  deleteBlog,
+  getBlogsByUser
+
 };
