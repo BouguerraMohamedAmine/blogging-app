@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProfileDetails from './ProfileDetails.jsx';
 
-const Profile = () => {
+const Profile = ({currentuser}) => {
   const [user, setUser] = useState({});
   const [blog, setblog] = useState([]);
   const [bio, setBio] = useState("");
-
+console.log("in profile", currentuser);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:5000/blog');
+        const response = await axios.get(`http://127.0.0.1:5000/blog/user/${currentuser._id}`);
         const userData = response.data;
         console.log(userData); // Check the structure of userData
         setUser(userData);
@@ -23,30 +23,31 @@ const Profile = () => {
 
     fetchData();
   }, []);
-  
-  
-    const handleUpdateProfilePicture = () => {
-    const newPicture = prompt("Enter the new profile picture URL:");
-    if (newPicture) {
-      setProfilePicture(newPicture);
-    }
-  };
 
-  const handleUpdateBio = () => {
-    const newBio = prompt("Enter the new bio:");
-    if (newBio) {
-      setBio(newBio);
-    }
-  };
 
-  const handleDeleteContent = (id) => {
-    const updatedContent = sharedContent.filter(content => content.id !== id);
-    setblog(updatedContent);
-  };
+  //   const handleUpdateProfilePicture = () => {
+  //   const newPicture = prompt("Enter the new profile picture URL:");
+  //   if (newPicture) {
+  //     setProfilePicture(newPicture);
+  //   }
+  // };
+
+  // const handleUpdateBio = () => {
+  //   const newBio = prompt("Enter the new bio:");
+  //   if (newBio) {
+  //     setBio(newBio);
+  //   }
+  // };
+
+  // const handleDeleteContent = (id) => {
+  //   const updatedContent = sharedContent.filter(content => content.id !== id);
+  //   setblog(updatedContent);
+  // };
 
   return (
     <div className="profile-container">
-      <ProfileDetails user={user} />
+      <ProfileDetails user={currentuser} />
+      {}
       <div className='wall'>
         <div className="feed">
           <div className="shared-content">
@@ -57,6 +58,9 @@ const Profile = () => {
                   <img src={blog.image} alt="Photo Icon" />
                   <p>{blog.body}</p>
                   <p>{blog.date}</p>
+[14:36]
+{/* <button 
+                  onClick={() => handleDeleteContent(content.id)}>Delete</button> */}
                 </li>
               ))}
             </ul>
@@ -68,3 +72,4 @@ const Profile = () => {
 };
 
 export default Profile;
+

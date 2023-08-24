@@ -6,18 +6,15 @@ function Home({ followed }) {
 
   return (
     <div className="home">
-      <h1>Welcome to the Home Page</h1>
+      
       {
-        followed.map((userBlogs, index) => (
-          <div key={index}>
-            <h2> User: {userBlogs.username} </h2>
-            {userBlogs.blogs.map(blog => (
-              <div key={blog.id}>
-                <p>{blog.title}</p>
-                <img src={blog.image} alt={blog.title} />
-                <p>{blog.body}</p>
-              </div>
-            ))}
+        followed.map((e, index) => (
+          <div className='main-home' key={index}>
+            <img className='home-pic' src={e.image}/>
+            <h2 className='home-title'> {e.title}   </h2>
+            <h2 className='home-body'>
+            {e.body}
+            </h2>
           </div>
         ))
       }
