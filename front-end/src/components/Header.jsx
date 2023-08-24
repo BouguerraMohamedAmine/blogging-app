@@ -12,7 +12,7 @@ function Header({changes}) {
 						<a className="button" href="">
 							<img
 								className="user-pic"
-								src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg"
+								src={changes.pic}
 								alt="Profile Image"
 							/>
 							<div className="logout">LOGOUT</div>
