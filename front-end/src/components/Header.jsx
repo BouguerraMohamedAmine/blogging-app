@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "../assets/logo.png";
 import avatar from "../assets/avatar.png";
-function Header() {
+function Header({changes}) {
+
 	return (
 		<div>
 			<div className="logo">
@@ -22,18 +23,17 @@ function Header() {
 					<input
 						type="text"
 						name="text"
-						class="search-input"
+						className="search-input"
 						pattern="[A-Za-z0-9 ]+"
-						placeholder="Numbers only or shake"
+						placeholder="Type smth to look for ..."
 					/>
 					<button className="search-btn">search</button>
 				</div>
 				<div className="navbar">
-					<h4> PROFILE</h4>
-					<h4> HOME</h4>
-					<h4> NEWS</h4>
-					<h4> USERS</h4>
-					<h4> CONTACT US</h4>
+					<h4 onClick={changes.changeprofile}> PROFILE</h4>
+					<h4 onClick={changes.changehome}> HOME</h4>
+					<h4 onClick={changes.changenews}> NEWS</h4>
+					<h4 onClick={changes.changecontact}> CONTACT US</h4>
 				</div>
 			</div>
 		</div>

@@ -1,13 +1,19 @@
-body {
-	margin-top: 6px;
-}
 
-.logo {
-	/* height: 150px; */
-	width: -webkit-fill-available;
+.App{
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+.logo {
+    background-color: white;
+    right: 0px;
+    position: fixed;
+    /* display: none; */
+    /* height: 150px; */
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-search {
@@ -257,11 +263,102 @@ a {
 
 
 /* The USERS VIEW */
-.main-users{
-position: fixed;
-right: 0;
-top: 50%;
-background-color: #80808091;
-height: 300px;
-width: 140px;
-border-radius: 25px;}
+.dot-users{
+	margin: 0;
+    font-size: 100px;
+    color: green;
+    height: 10px;
+    width: auto;
+    position: absolute;
+    top: -90px;
+}
+.main-users {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: #6666664f;
+    height: 500px;
+    width: 140px;
+    border-radius: 25px;
+    overflow-y: auto;
+}
+
+.one-user {
+    display: flex;
+   
+    align-items: center;
+    flex-direction: column;
+}
+.one-pic{
+	  width: 60px; /* Adjust the width and height as needed */
+  height: 60px;
+  border-radius: 50%; /* This makes the element circular */
+  object-fit: cover; /* Maintain the aspect ratio and cover the container */
+  border: 3px solid white; /* Optional: Add a white border around the image */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.one-name {
+	text-align: center;
+	font-family: ui-monospace;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.one-plus{
+margin-top: 5px;
+}
+
+/* css of NEWS */
+.news-feed {
+    margin-top: 210px;
+    /* background-color: blue; */
+    width: 50%;
+    height: auto;
+}
+/* .new-pic{
+	height: 50px;
+	width: 50px;
+} */
+.new-title{
+
+}
+.new-whole {
+	margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #faebd79e;
+    align-content: center;
+    border-radius: 20px;
+}
+.publisher-line {
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+  }
+  
+  .line {
+	flex-grow: 1;
+	border: none;
+	border-top: 1px solid #ccc;
+  }
+  
+  .publisher {
+	margin: 0 10px;
+	font-size: 14px;
+	color: #666;
+  }
+  /* scroll bar css */
+  .main-users::-webkit-scrollbar,
+  .main-users::-webkit-scrollbar-thumb {
+	width: 26px;
+	border-radius: 13px;
+	background-clip: padding-box;
+	border: 10px solid transparent;
+  }
+  
+  .main-users::-webkit-scrollbar-thumb {        
+	box-shadow: inset 0 0 0 10px;
+  }

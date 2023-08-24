@@ -2,10 +2,10 @@ const express = require("express");
 const db = require('../db/config.js'); // Adjust the path
 const blogroutes = require('../db/routes/blogRoutes.js');
 const userroutes = require('../db/routes/userRoutes');
-
+const cors = require('cors');
 const app = express();
-
 app.use(express.json());
+app.use(cors());
 db.once('open', async () => {
  
  try { console.log('Connected to the database');}
