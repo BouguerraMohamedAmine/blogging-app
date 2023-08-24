@@ -217,7 +217,7 @@ h4:active {
 }
 
 .user-pic {
-  width: 25px;
+  width: 30px;
   border-radius: 50px;
   float: left;
 }
@@ -261,104 +261,98 @@ a {
   text-decoration: none;
 }
 
-
-/* The USERS VIEW */
-.dot-users{
-	margin: 0;
-    font-size: 100px;
-    color: green;
-    height: 10px;
-    width: auto;
-    position: absolute;
-    top: -90px;
-}
-.main-users {
-    margin-bottom: 20px;
-    margin-right: 20px;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    background-color: #6666664f;
-    height: 500px;
-    width: 140px;
-    border-radius: 25px;
-    overflow-y: auto;
-}
-
-.one-user {
+/* Profile.css */
+.profile-container {
+	background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    padding: 25px;
+    border-radius: 0px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
-   
-    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 100px;
+}
+  
+.profile-left {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    justify-content: center;
+}  
+  .profile-picture img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	border: 4px solid #fff;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .profile-picture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.one-pic{
-	  width: 60px; /* Adjust the width and height as needed */
-  height: 60px;
-  border-radius: 50%; /* This makes the element circular */
-  object-fit: cover; /* Maintain the aspect ratio and cover the container */
-  border: 3px solid white; /* Optional: Add a white border around the image */
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-}
-.one-name {
-	text-align: center;
-	font-family: ui-monospace;
-    font-size: 18px;
+
+  .bio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 150px;
+  }
+  .bio h2 {
+    margin: 0px;
+    color: #333;
+    font-size: 20PX;
+    text-align: center;
     margin-top: 10px;
-    margin-bottom: 5px;
-}
-.one-plus{
-margin-top: 5px;
-}
-
-/* css of NEWS */
-.news-feed {
-    margin-top: 210px;
-    /* background-color: blue; */
-    width: 50%;
-    height: auto;
-}
-/* .new-pic{
-	height: 50px;
-	width: 50px;
-} */
-.new-title{
-
-}
-.new-whole {
-	margin: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #faebd79e;
-    align-content: center;
-    border-radius: 20px;
-}
-.publisher-line {
-	display: flex;
-	align-items: center;
-	margin: 20px 0;
+    margin-bottom: 10px;
+}  
+  .bio p {
+	margin: 5px 0;
+	color: #777;
   }
   
-  .line {
+  .feed {
 	flex-grow: 1;
-	border: none;
-	border-top: 1px solid #ccc;
   }
   
-  .publisher {
-	margin: 0 10px;
-	font-size: 14px;
-	color: #666;
-  }
-  /* scroll bar css */
-  .main-users::-webkit-scrollbar,
-  .main-users::-webkit-scrollbar-thumb {
-	width: 26px;
-	border-radius: 13px;
-	background-clip: padding-box;
-	border: 10px solid transparent;
+  .shared-content {
+	margin-top: 10px;
   }
   
-  .main-users::-webkit-scrollbar-thumb {        
-	box-shadow: inset 0 0 0 10px;
+  .shared-content h3 {
+	margin: 0;
+	color: #333;
   }
+  
+  .shared-content ul {
+	list-style: none;
+	padding: 0;
+  }
+  
+  .shared-content li {
+	display: flex;
+	align-items:first baseline;
+	margin: 10px 0;
+  }
+  
+  .shared-content li img {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+  }
+  
+  .shared-content li p {
+	margin: 0;
+	flex-grow: 1;
+	color: #555;
+  }
+ 
+  .wall{
+	width: -webkit-fill-available;
+}
+  
+  
