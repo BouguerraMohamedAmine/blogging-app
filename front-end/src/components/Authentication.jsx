@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function Authentication({ change , current}) {
+function Authentication({ change , current , regist}) {
     const [users, setUsers] = useState([]);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -64,9 +64,13 @@ function Authentication({ change , current}) {
                     />
                 </div>
 
-                <button id="button" onClick={handleLogin}>
+                <button className="buttonn" onClick={handleLogin}>
                     Submit
                 </button>
+                <button className='buttonn' onClick={event => { event.preventDefault(); regist(); }}>
+                     Sign in
+                    </button>
+
                 <a className="forgotLink" href="#">
                     Forgot your password?
                 </a>
