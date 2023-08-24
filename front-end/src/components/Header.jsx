@@ -8,14 +8,14 @@ function Header({ onProfileClick }) {
         <div className='top-head'>
           <img className="logo-img" src={logo} alt="Logo" />
           <div className="navigation">
-            <button className="button" onClick={onProfileClick}>
-              <img
+            <a className="button" href="">
+            <img
                 className='user-pic'
-                src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg"
+                src=""
                 alt="Profile Image"
               />
               <div className="logout">LOGOUT</div>
-            </button>
+            </a>
           </div>
         </div>
         <div className="main-search">
