@@ -7,12 +7,12 @@ import Profile from "./components/Profile.jsx";
 import Authentication from "./components/Authentication.jsx";
 import Registration from "./components/Registration.jsx"; // Import the Registration component
 import React, { useState } from "react"; // Remove unused useEffect import
-
+import Home from './components/Home';
 
 function App() {
   const [view, setView] = useState('authentication');
   const [currentuser, setCurrentuser] = useState({});
-
+  const [ followed , setFollowed ]= useState([])
   const changenews = () => {
     setView("news");
   }
@@ -44,6 +44,13 @@ function App() {
   const auth=()=>{
    setView("authentication")
   }
+  const followede = (flow) => {
+    const newFlow = flow.filter(item => !followed.some(followedItem => followedItem._id === item._id));
+  
+    if (newFlow.length > 0) {
+      setFollowed(prevFollowed => [...prevFollowed, ...newFlow]);
+    }
+  };
   return (
     <div className="App">
       {view === "authentication" ? (
@@ -66,7 +73,8 @@ function App() {
               pic: currentuser.image
             }}
           />
-          <UsersView />
+          <UsersView fol = {followede} />
+          {view === "home" && <Home followed={followed}/>}
           {view === "news" && <News />}
           {view === "contact" && <Contact />}
           {view === "profile" && <Profile currentuser={currentuser}/>}

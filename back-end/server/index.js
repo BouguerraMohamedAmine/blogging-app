@@ -5,7 +5,7 @@ const userroutes = require('../db/routes/userRoutes');
 const cors = require('cors')
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors())
 db.once('open', async () => {
  
  try { console.log('Connected to the database');}

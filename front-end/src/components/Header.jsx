@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/LOGO3.png";
 import avatar from "../assets/avatar.png";
 function Header({changes}) {
 
@@ -14,7 +14,7 @@ function Header({changes}) {
 								className="user-pic"
 								src={changes.pic}
 								alt="Profile Image"
-							/>
+							/>   
 							<div className="logout">LOGOUT</div>
 						</a>
 					</div>
