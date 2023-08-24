@@ -4,7 +4,6 @@ const blogroutes = require('../db/routes/blogRoutes.js');
 const userroutes = require('../db/routes/userRoutes');
 const cors = require('cors')
 const app = express();
-
 app.use(express.json());
 app.use(cors())
 db.once('open', async () => {

@@ -1,37 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function UsersView() {
+function UsersView({ onUserSelect }) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    // Use an async function to fetch data and update state
     async function fetchData() {
       try {
-        const response = await axios.get('http://localhost:5000/user'); // Corrected URL
-        setUsers(response.data); // Update the state with fetched data
-        console.log(response.data); // Log the fetched data
+        const response = await axios.get('http://localhost:5000/user');
+        setUsers(response.data);
+        console.log("we talk bt",response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     }
-    
-    fetchData(); // Call the async function
-  }, []); // Empty dependency array means this effect runs once after initial render
+
+    fetchData();
+  }, []);
+
+  const handleUserClick = async (userId) => {
+    try {
+      const response = await axios.get(`http://127.0.0.1:5000/blog/user/${userId}`);
+      const userData = users.find(user => user.id === userId);
+      onUserSelect( response.data ); // Pass user and blog data to parent component
+    } catch (error) {
+      console.error('Error fetching user blogs:', error);
+    }
+  };
 
   return (
     <div className='main-users'>
-    <p className='dot-users'>
-      .
-    </p>
+      <p className='dot-users'>.</p>
       {users.map(user => (
         <div key={user.id} className="one-user">
           <p className='one-name'>{user.username}</p>
-         <div>
-          <img className='one-pic' src={user.image} alt={user.username} /> {/* Closing tag for <img> */}
-
-         </div>
-          <button className='one-plus'>+</button> {/* Closing angle bracket */}
+          <div>
+            <img className='one-pic' src={user.image} alt={user.username} />
+          </div>
+          <button className='one-plus' onClick={() => handleUserClick(user._id)}>+</button>
         </div>
       ))}
     </div>

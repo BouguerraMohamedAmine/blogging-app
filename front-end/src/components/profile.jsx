@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ProfileDetails from './profileDetails.jsx';
+import ProfileDetails from './ProfileDetails.jsx';
 
 const Profile = () => {
   const [user, setUser] = useState({});
@@ -57,7 +57,6 @@ const Profile = () => {
                   <img src={blog.image} alt="Photo Icon" />
                   <p>{blog.body}</p>
                   <p>{blog.date}</p>
-                  <button onClick={() => handleDeleteContent(content.id)}>Delete</button>
                 </li>
               ))}
             </ul>
