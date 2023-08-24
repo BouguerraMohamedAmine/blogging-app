@@ -1,13 +1,14 @@
-[{
+[
+  {
     "_id": {
       "$oid": "64df95b671b0f772d587b22d"
     },
-    "username": "john_doe",
-    "email": "john@example.com",
-    "password": "hashed_password",
-    "image": "profile.jpg",
-    "phoneNumber": "123-456-7890",
-    "city": "New York",
+    "username": "karim",
+    "email": "karim@gmail.com",
+    "password": "kormi",
+    "image": "https://scontent.ftun14-1.fna.fbcdn.net/v/t39.30808-6/347420209_202467265994274_5398782986781971422_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DlZFqqRlwt4AX8U7HWr&_nc_ht=scontent.ftun14-1.fna&oh=00_AfBvL3UHKE0iwUAaD0zqPxSCZryG-tFKQ3Sgf9aacXoaYg&oe=64EBC54E",
+    "phoneNumber": "07775000",
+    "city": "venizia",
     "__v": 0
   },
   {
