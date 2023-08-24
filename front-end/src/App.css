@@ -5,7 +5,7 @@
     align-items: center;
 }
 .logo {
-    background-color: white;
+	background-color: white;
     right: 0px;
     position: fixed;
     /* display: none; */
@@ -535,7 +535,7 @@ margin-top: 5px;
 	font-weight: 500;
   }
   
-  #button {
+  .buttonn {
 	z-index: 2;
 	position: relative;
 	width: 100%;
@@ -550,7 +550,7 @@ margin-top: 5px;
 	cursor: pointer;
   }
   
-  #button:hover {
+  .buttonn:hover {
 	background-color: rgb(126, 84, 255);
   }
   
@@ -595,9 +595,7 @@ margin-top: 5px;
   }
   
   textarea {
-	resize: none;
-	height: 80px;
-	width: 200px;
+	height: 16px;
   }
   
   .contact-form input, .contact-form textarea {
@@ -629,3 +627,159 @@ margin-top: 5px;
 	transition: transform 0.3s ease-in-out;
   }
   
+  /* shared content */
+  .share-main {
+	margin-top: 20px;
+    display: flex;
+  }
+ .share-pic{
+	height: 200px;
+	margin-right: 10px;
+ }
+ hr{
+	width: -webkit-fill-available;
+}
+.share-body {
+  font-family: monospace;
+  color: #666;
+}
+.share-title {
+	font-family: auto;
+    font-size: 25px;
+    font-weight: 900;
+}
+.share-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-blog-form{
+	margin-top: 6%;
+	display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;	
+}
+/* delete button */
+.noselect {
+	width: 150px;
+	/* height: 50px; */
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	background: red;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+	background: #e62222;
+   }
+   
+   .noselect, button span {
+	transition: 200ms;
+   }
+   
+   .noselect .text {
+	transform: translateX(35px);
+	color: white;
+	font-weight: bold;
+   }
+   
+   .noselect .icon {
+	position: absolute;
+	
+	transform: translateX(110px);
+	height: 40px;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+   }
+   
+   .noselect svg {
+	width: 15px;
+	fill: #eee;
+   }
+   
+   .noselect:hover {
+	background: #ff3636;
+   }
+   
+   .noselect:hover .text {
+	color: transparent;
+   }
+   
+   .noselect:hover .icon {
+	width: 150px;
+	border-left: none;
+	transform: translateX(0);
+   }
+   
+   .noselect:focus {
+	outline: none;
+   }
+   
+   .noselect:active .icon svg {
+	transform: scale(0.8);
+   }
+   /* update btn */
+   #other {
+	width: 150px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	background: red;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+	background: #4934c2;
+   }
+   
+   #other, button span {
+	transition: 200ms;
+   }
+   
+   #other .text {
+	transform: translateX(35px);
+	color: white;
+	font-weight: bold;
+   }
+   
+   #other .icon {
+	position: absolute;
+	
+	transform: translateX(110px);
+	height: 40px;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+   }
+   
+   #other svg {
+	width: 15px;
+	fill: #eee;
+   }
+   
+   #other:hover {
+	background: #2b43dc;
+   }
+   
+   #other:hover .text {
+	color: transparent;
+   }
+   
+   #other:hover .icon {
+	width: 150px;
+	border-left: none;
+	transform: translateX(0);
+   }
+   
+   #other:focus {
+	outline: none;
+   }
+   
+   #other:active .icon svg {
+	transform: scale(0.8);
+   }
+   

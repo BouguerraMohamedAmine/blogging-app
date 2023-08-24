@@ -4,8 +4,10 @@ import UsersView from "./components/UsersView.jsx";
 import News from "./components/News.jsx";
 import Contact from "./components/Contact.jsx";
 import Profile from "./components/Profile.jsx";
-import Authentication from "./components/Authentication.jsx"
-import React, { useEffect, useState } from "react";
+import Authentication from "./components/Authentication.jsx";
+import Registration from "./components/Registration.jsx"; // Import the Registration component
+import React, { useState } from "react"; // Remove unused useEffect import
+
 
 function App() {
   const [view, setView] = useState('authentication');
@@ -35,14 +37,24 @@ function App() {
     setCurrentuser(user);
     console.log("hello this is ur current user", user);
   }
-
+  const regist=()=>{
+    setView("registration")
+    console.log(view);
+  }
+  const auth=()=>{
+   setView("authentication")
+  }
   return (
     <div className="App">
       {view === "authentication" ? (
         <Authentication 
           change={changehome}
-          current={setCurrent}  // Use setCurrent instead of current
+          current={setCurrent}
+          regist={regist}
+
         />
+      ) : view === "registration" ? ( // Check if the view is registration
+        <Registration auth={auth} /> // Display the Registration component
       ) : (
         <>
           <Header 
@@ -51,8 +63,7 @@ function App() {
               changeprofile: changeprofile,
               changehome: changehome,
               changecontact: changecontact,
-              pic:currentuser.image
-
+              pic: currentuser.image
             }}
           />
           <UsersView />
