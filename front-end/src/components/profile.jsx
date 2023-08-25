@@ -88,18 +88,17 @@ const Profile = ({ currentuser }) => {
     
   return (
     <div className="profile-container">
-      <ProfileDetails user={currentuser} />
-        
-      <div className='wall'>
-        <div className="feed">
-          <div className="shared-content">
-            <h3>Shared Content</h3>
-              
-            {blog.map(e => (
-              <div className="share-main" key={e._id}>
-                <img className='share-pic' src={e.image} alt="Photo Icon" />
-                <div className='share-wrapper'>
-                  {isUpdating === e._id ? (
+    <ProfileDetails user={currentuser} />        
+    <div className='wall'>
+    <div className="feed">
+      <div className="shared-content">
+        <h3>Shared Content</h3>
+          
+        {blog.map(e => (
+          <div className="share-main" key={e._id}>
+            <img className='share-pic' src={e.image} alt="Photo Icon" />
+            <div className='share-wrapper'>
+              {isUpdating === e._id ? (
                    <form onSubmit={(event) => handleUpdateSubmit(event, e._id)}>
             
 
@@ -131,7 +130,7 @@ const Profile = ({ currentuser }) => {
                     </>
                   )}
                 </div>
-                <p className= 'share-date'>{e.date}</p>
+                <p className='share-date'>{e.date}</p>
               </div>
             ))}
             <div className="new-blog-form">
@@ -154,7 +153,7 @@ const Profile = ({ currentuser }) => {
                 onChange={(e) => setNewImage(e.target.value)}
               />
               <button onClick={handleCreateBlog}>Post Blog</button>
-            </div>
+              </div>
           </div>
         </div>
       </div>

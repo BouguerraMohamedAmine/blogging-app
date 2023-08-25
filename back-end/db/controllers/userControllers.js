@@ -53,11 +53,24 @@ async function deleteUser(req, res) {
   res.status(500).json({ error: 'Internal server error' })
 }
 }
+async function getUserByUsername(req, res) {
+  try {
+    const { username } = req.params; // Extract the username from the request parameters
+    const user = await User.findOne({ username }); // Find the user by username
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
 
 module.exports = {
   createUser,
   getUsers,
   getUserById,
   updateUser,
-  deleteUser
+  deleteUser,
+  getUserByUsername
 }

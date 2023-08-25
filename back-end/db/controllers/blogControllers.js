@@ -62,6 +62,20 @@ async function getBlogsByUser(req, res) {
     res.status(500).json({ error: 'An error occurred while fetching blogs.' });
   }
 }
+async function getBlogByTitle(req, res) {
+  try {
+    const title = req.params.title; // Assuming the title is passed as a URL parameter
+    const blog = await Blog.findOne({ title });
+
+    if (!blog) {
+      return res.status(404).json({ message: 'Blog not found' });
+    }
+
+    res.status(200).json(blog);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
 
 
 module.exports = {
@@ -70,6 +84,6 @@ module.exports = {
   getBlogById,
   updateBlog,
   deleteBlog,
-  getBlogsByUser
-
+  getBlogsByUser,
+  getBlogByTitle
 };

@@ -30,7 +30,6 @@ function UsersView({ fol }) {
 
   return (
     <div className='main-users'>
-      <p className='dot-users'>.</p>
       {users.map(user => (
         <div key={user.id} className="one-user">
           <p className='one-name'>{user.username}</p>
