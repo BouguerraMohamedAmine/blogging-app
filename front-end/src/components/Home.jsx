@@ -10,10 +10,11 @@ console.log ('haw search li theb alih w sayebni' , searchResults)
       {
         followed.map((e, index) => (
           <div className='main-home' key={index}>
-            <img className='home-pic' src={e.image}/>
-            <h2 className='home-title'> {e.title}   </h2>
-            <h2 className='home-body'>
-            {e.body}
+          <img className='home-pic' src={e.image}/>
+          <h2 className='home-title'> {e.title}   </h2>
+          <h2 className='home-body'>
+          {e.body}
+
             </h2>
           </div>
         ))
