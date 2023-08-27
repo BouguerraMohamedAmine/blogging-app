@@ -1214,3 +1214,9 @@ margin-top: 5px;
   .post-button:active {
 	transform: scale(0.98);
   }
+
+  .searching {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
