@@ -13,9 +13,14 @@ function App() {
   const [view, setView] = useState('authentication');
   const [currentuser, setCurrentuser] = useState({});
   const [ followed , setFollowed ]= useState([])
+  const [searchResults, setSearchResults] = useState([]);
 
 
-
+  const search = (newResults) => {
+    setSearchResults(newResults);
+    console.log("ya khraaaaaaaaaaaaaaa het zok om data " , searchResults);
+  };
+  
   const changenews = () => {
     setView("news");
   }
@@ -74,11 +79,13 @@ function App() {
               changeprofile: changeprofile,
               changehome: changehome,
               changecontact: changecontact,
-              pic: currentuser.image
+              pic: currentuser.image,
+              search : search 
+
             }}
           />
           <UsersView fol = {followede} />
-          {view === "home" && <Home followed={followed}/>}
+          {view === "home" && <Home followed={followed} searched={searchResults}/>}
           {view === "news" && <News />}
           {view === "contact" && <Contact />}
           {view === "profile" && <Profile currentuser={currentuser}/>}

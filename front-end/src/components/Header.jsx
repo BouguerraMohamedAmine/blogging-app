@@ -1,11 +1,11 @@
 	import React, { useState } from "react";
 	import logo from "../assets/LOGO3.png";
-	import avatar from "../assets/avatar.png";
 	import axios from "axios";
 
-	function Header({ changes }) {
+	function Header({ changes  }) {
+
 		const [searchText, setSearchText] = useState("");
-		const [searchResults, setSearchResults] = useState([]);
+		
 
 		const handleSearch = async () => {
 			try {
@@ -17,10 +17,10 @@
 				`http://127.0.0.1:5000/users/${searchText}`
 			  );
 			  console.log("Response data:", response.data);
-			  setSearchResults(response.data);
+			  changes.search(response.data);
 			} catch (error) {
 			  console.error("Error fetching search results:", error.response);
-			  setSearchResults([]);
+			  changes.search([]);
 			}
 		  };
 					  
@@ -53,15 +53,7 @@
 					<button className="search-btn" onClick={handleSearch}>
 					Search
 					</button>
-					<div className="search-results">
-					{searchResults.length > 0 ? (
-					  searchResults.map((result) => (
-						<div key={result._id}>{result.username}</div>
-					  ))
-					) : (
-					  <div>No results found.</div>
-					)}
-									  </div>
+					
 				  </div>
 							<div className="navbar">
 						<h4 onClick={changes.changeprofile}> PROFILE</h4>
