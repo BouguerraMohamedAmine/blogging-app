@@ -56,6 +56,7 @@ function App() {
   };
   return (
     <div className="App">
+
       {view === "authentication" ? (
         <Authentication 
           change={changehome}

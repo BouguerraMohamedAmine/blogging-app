@@ -52,11 +52,12 @@ async function deleteUser(req, res) {
   } catch (error) {
   res.status(500).json({ error: 'Internal server error' })
 }
-}
+};
+
 async function getUserByUsername(req, res) {
   try {
-    const { username } = req.params; // Extract the username from the request parameters
-    const user = await User.findOne({ username }); // Find the user by username
+    const { username } = req.params;
+    const user = await User.findOne({ username });
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
@@ -72,5 +73,5 @@ module.exports = {
   getUserById,
   updateUser,
   deleteUser,
-  getUserByUsername
+  getUserByUsername,
 }

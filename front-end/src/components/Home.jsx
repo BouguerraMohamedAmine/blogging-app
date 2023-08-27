@@ -1,9 +1,9 @@
 import React from 'react';
 import UsersView from './UsersView';
 
-function Home({ followed }) {
+function Home({ followed , searchResults }) {
   console.log("hey there", followed);
-
+console.log ('haw search li theb alih w sayebni' , searchResults)
   return (
     <div className="home">
       

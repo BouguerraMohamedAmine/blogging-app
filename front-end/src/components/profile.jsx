@@ -152,7 +152,7 @@ const Profile = ({ currentuser }) => {
                 value={newImage}
                 onChange={(e) => setNewImage(e.target.value)}
               />
-              <button onClick={handleCreateBlog}>Post Blog</button>
+              <button className='post-button' onClick={handleCreateBlog}>Post Blog</button>
               </div>
           </div>
         </div>
