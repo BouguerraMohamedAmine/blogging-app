@@ -33,7 +33,7 @@ function Registration({auth}) {
   };
 
   return (
-    <div>
+    <div className='body-register'>
       <h2 >Sign Up</h2>
       <form>
         <div>

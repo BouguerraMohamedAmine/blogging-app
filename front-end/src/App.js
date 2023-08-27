@@ -5,14 +5,17 @@ import News from "./components/News.jsx";
 import Contact from "./components/Contact.jsx";
 import Profile from "./components/Profile.jsx";
 import Authentication from "./components/Authentication.jsx";
-import Registration from "./components/Registration.jsx"; // Import the Registration component
-import React, { useState } from "react"; // Remove unused useEffect import
+import Registration from "./components/Registration.jsx"; 
+import React, { useState } from "react"; 
 import Home from './components/Home';
 
 function App() {
   const [view, setView] = useState('authentication');
   const [currentuser, setCurrentuser] = useState({});
   const [ followed , setFollowed ]= useState([])
+
+
+
   const changenews = () => {
     setView("news");
   }
@@ -53,6 +56,7 @@ function App() {
   };
   return (
     <div className="App">
+
       {view === "authentication" ? (
         <Authentication 
           change={changehome}
